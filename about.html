@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ganesh | Home</title>
+  <title>Ganesh | About</title>
   <style>
     :root {
       --pearl-blue: #2f7896;
@@ -67,7 +67,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      margin-bottom: clamp(54px, 10vw, 110px);
+      margin-bottom: clamp(48px, 8vw, 82px);
     }
 
     .brand {
@@ -102,13 +102,6 @@
       background: var(--pearl-blue-deep);
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
-      align-items: center;
-      gap: 42px;
-    }
-
     .eyebrow {
       margin: 0 0 18px;
       color: var(--pearl-blue-deep);
@@ -119,52 +112,46 @@
     }
 
     h1 {
-      max-width: 660px;
+      max-width: 700px;
       margin: 0;
-      font-size: clamp(2.8rem, 7vw, 5.6rem);
-      line-height: 0.96;
+      font-size: clamp(2.7rem, 7vw, 5.2rem);
+      line-height: 0.98;
       letter-spacing: 0;
     }
 
     .lead {
-      max-width: 590px;
-      margin: 24px 0 34px;
+      max-width: 720px;
+      margin: 24px 0 38px;
       color: var(--muted);
       font-size: clamp(1.05rem, 2vw, 1.25rem);
       line-height: 1.65;
     }
 
-    .button {
-      min-height: 52px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 24px;
-      color: #ffffff;
-      background: var(--pearl-blue-deep);
-      border-radius: 999px;
-      text-decoration: none;
-      box-shadow: 0 16px 34px rgba(18, 76, 102, 0.28);
-    }
-
-    .pearl-card {
-      aspect-ratio: 1;
+    .grid {
       display: grid;
-      place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.72);
-      border-radius: 26px;
-      background:
-        radial-gradient(circle at 35% 28%, #ffffff 0 10%, transparent 30%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(214, 237, 244, 0.78), rgba(47, 120, 150, 0.62));
-      box-shadow: 0 24px 60px rgba(23, 56, 74, 0.14);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
 
-    .pearl-card span {
-      width: 52%;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ffffff, #d6edf4 42%, var(--pearl-blue));
-      box-shadow: inset -18px -22px 34px rgba(18, 76, 102, 0.18), 0 22px 52px rgba(18, 76, 102, 0.22);
+    .item {
+      min-height: 160px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.48);
+    }
+
+    .item h2 {
+      margin: 0 0 12px;
+      color: var(--pearl-blue-deep);
+      font-size: 1.35rem;
+    }
+
+    .item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.55;
     }
 
     footer {
@@ -183,11 +170,6 @@
         border-radius: 22px;
       }
 
-      header,
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
       header {
         align-items: flex-start;
         flex-direction: column;
@@ -197,6 +179,10 @@
       nav {
         justify-content: flex-start;
       }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -205,25 +191,34 @@
     <header>
       <a class="brand" href="home.html">Ganesh</a>
       <nav aria-label="Primary navigation">
-        <a href="home.html" aria-current="page">Home</a>
-        <a href="about.html">About</a>
+        <a href="home.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <main class="hero">
-      <section>
-        <p class="eyebrow">Dark Pearl Blue</p>
-        <h1>Welcome to Ganesh</h1>
-        <p class="lead">
-          A calm, polished home page with a dark pearl-blue identity and milky-white finish,
-          created for www.ganesh.local.
-        </p>
-        <a class="button" href="contact.html">Contact Us</a>
+    <main>
+      <p class="eyebrow">About Us</p>
+      <h1>Designed with a refined pearl finish</h1>
+      <p class="lead">
+        Ganesh is presented with a clean, calm visual identity using dark pearl blue,
+        milky white surfaces, and soft patterned detail for a polished web presence.
+      </p>
+
+      <section class="grid" aria-label="About highlights">
+        <article class="item">
+          <h2>Style</h2>
+          <p>A smooth dark pearl-blue theme balanced with clear milky-white content areas.</p>
+        </article>
+        <article class="item">
+          <h2>Purpose</h2>
+          <p>Simple pages for visitors to learn, navigate, and reach the Ganesh team quickly.</p>
+        </article>
+        <article class="item">
+          <h2>Experience</h2>
+          <p>Responsive layouts that keep the content readable on phones, tablets, and desktops.</p>
+        </article>
       </section>
-      <div class="pearl-card" aria-hidden="true">
-        <span></span>
-      </div>
     </main>
 
     <footer>&copy; owned by www.ganesh.local</footer>
